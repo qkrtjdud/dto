@@ -42,7 +42,6 @@ public class OrderRestController {
     @GetMapping("/orders")
     public ResponseEntity<?> findAllByUser() {
         User sessionUser = (User) session.getAttribute("sessionUser");
-        System.out.println("여기까지 오나?");
         OrderResponse.FindAllByUserDTO responseDTO = orderService.findAllByUser(sessionUser.getId());
         System.out.println("로그1: "+responseDTO);
         return ResponseEntity.ok(responseDTO);
